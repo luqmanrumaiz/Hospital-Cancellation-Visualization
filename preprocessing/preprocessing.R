@@ -34,6 +34,9 @@ dataset$ScheduledDayTemp <- NULL # Lets delete this now that we do not require i
 
 dataset$ScheduledDay <- as.POSIXct(dataset$ScheduledDay, format = "%Y-%m-%dT%H:%M:%SZ")
 
+# 
+dataset$DayOfWeek <- weekdays(as.Date(dataset$AppointmentDay))
+
 # Removing ages less than 0 as they are data entry errors
 dataset$Age <- ifelse(dataset$Age < 0, 0, dataset$Age)
 

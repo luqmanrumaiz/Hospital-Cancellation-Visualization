@@ -1,11 +1,11 @@
 # Load the necessary packages
 library(dplyr)
-library(ggmap)
+#library(ggmap)
 
 # We have to register our service for Google maps with an API key
-register_google(
-  'AIzaSyCx6V0sc626jiStBX-jXfK_l5QcV8tVim0',
-)
+#register_google(
+#  'AIzaSyCx6V0sc626jiStBX-jXfK_l5QcV8tVim0',
+#)
 
 # Read the data frame
 dataset <- read.csv("../data/raw/noshow_hosptial_appointment.csv")

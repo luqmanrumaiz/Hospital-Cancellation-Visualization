@@ -47,6 +47,7 @@ dataset <- dataset %>%
 dataset$Cancelled<- ifelse(dataset$Cancelled == "Yes", TRUE, FALSE)
 dataset$Scholarship<- ifelse(dataset$Scholarship == 1, TRUE, FALSE)
 dataset$Hypertension<- ifelse(dataset$Hypertension == 1, TRUE, FALSE)
+dataset$handicap <- ifelse(dataset$Handicapped > 0, TRUE, FALSE)
 dataset$Diabetes<- ifelse(dataset$Diabetes == 1, TRUE, FALSE)
 dataset$Alcoholism<- ifelse(dataset$Alcoholism == 1, TRUE, FALSE)
 dataset$SMSReceived<- ifelse(dataset$SMSReceived == 1, TRUE, FALSE)

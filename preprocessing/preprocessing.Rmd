@@ -62,11 +62,23 @@ dataset$DayOfWeek <- weekdays(as.Date(dataset$ScheduledDay))
 ```
 
 ```{r}
-# Removing ages less than 0 as they are data entry errors
-dataset$Age <- ifelse(dataset$Age < 0, 0, dataset$Age)
+print(any(dataset$Age < 0))
+```
 
+```{r}
+# Removing ages less than 0 as they are data entry errors
+dataset <- dataset[dataset$Age >= 0,]
+
+print(any(dataset$Age < 0))
+```
+```{r}
+print(min(dataset$Age))
+print(max(dataset$Age))
+```
+
+```{r}
 # Define the age bin edges
-age_bins <- c(0, 2, 16, 30, 45, max(dataset$Age))
+age_bins <- c(-1, 2, 16, 30, 45, 116)
 # Define the age group labels
 age_labels <- c('Baby', 'Children', 'YoungAdult', 'MiddleAgedAdult', 'OldAdult')
 
